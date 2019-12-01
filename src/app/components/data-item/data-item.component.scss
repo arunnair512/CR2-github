@@ -1,0 +1,47 @@
+.data-item {
+    width: 100%;
+    padding: 0.25rem;
+    /*  height: 60px;*/
+    background: #bdc3c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(#2c3e50, 0.1), rgba(#bdc3c7,0.1));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(#2c3e50, 0.1), rgba(#bdc3c7,0.1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    z-index: 9;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: right;
+    color: white;
+    font-family: monospace;
+    transition: background-color .3s linear;
+
+    &:active {
+        background-color: darken(#973999, 10%);
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-size: 10px;
+        color: white !important;
+    }
+
+}
+.wrapText {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.7em;
+  }
+  .empty-state_info {
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+        color: white;
+        text-align: center;
+        font-size: 0.6em;
+    
+  
+}

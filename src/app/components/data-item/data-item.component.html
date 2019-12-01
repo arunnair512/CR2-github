@@ -1,0 +1,41 @@
+<div class="data-item">
+  <div class="data-item__name">
+    <ion-grid>
+      <ion-row>
+        <ion-item>
+          <ion-col size="7">
+            <ion-item>
+              <ion-avatar>
+                <img [src]="data.owner.avatar_url" />
+              </ion-avatar>
+
+              <ion-item>
+                <ion-note class="wrapText">{{ data.full_name }}</ion-note>
+              </ion-item>
+            </ion-item>
+
+            <ion-item>
+              <span class="empty-state_info">
+                By : {{ data.owner.login }}
+              </span>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5">
+            <ion-item>
+              <ion-button fill="outline" slot="end">
+                <ion-icon color="danger" name="heart" slot="start"></ion-icon>
+                {{ data.stargazers_count }}
+              </ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-button color="warning" fill="outline">
+                <ion-icon name="trophy" color="success"></ion-icon>
+                {{ data.score.toFixed(2) }}/{{ avgScore1 }}
+              </ion-button>
+            </ion-item>
+          </ion-col>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

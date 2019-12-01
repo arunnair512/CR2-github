@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-item>
+    <ion-input
+      color="light"
+      type="text"
+      placeholder="Search a topic"
+      clearInput
+      (ionChange)="showSearchButton($event)"
+    >
+      <ion-icon
+        name="search"
+        *ngIf="showBtn"
+        item-right
+        (click)="search($event)"
+        fill="outline"
+      ></ion-icon>
+    </ion-input>
+  </ion-item>
+</ion-header>
+<ion-content class="home-page">
+  <!-- <section id="snow"></section> -->
+  <div *ngIf="repoList; else emptyState">
+    <data-item
+      *ngFor="let repo of repoList"
+      [data]="repo"
+      [avgScore1]="avgScore"
+    ></data-item>
+
+    <ion-fab-button
+      slot="end"
+      color="primary"
+      *ngIf="filterBtn"
+      (click)="showDataByAvg(repoList.length)"
+      ><ion-icon name="funnel"></ion-icon
+    ></ion-fab-button>
+  </div>
+  <ng-template #emptyState>
+    <empty-state [query]="query"> </empty-state>
+  </ng-template>
+</ion-content>
